@@ -14,12 +14,6 @@ pipeline{
                 }
             }
         }
-
-        stage('Clone do Codigo'){
-            steps{
-                git url: 'https://github.com/diegoantoni/WebGoat'
-            }
-        }
         
         stage('Executando Container'){
             steps {
