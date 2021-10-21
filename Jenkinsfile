@@ -3,7 +3,7 @@ pipeline{
     environment {
         NAME_APP = "webgoat"
         PORT_APP = "3333"
-        DIR_DOCKER = "tree/develop/docker"
+        DIR_DOCKER = "/home/jenkins/workspace/pipeline-webgoat/docker"
     }
     
     stages {
