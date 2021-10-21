@@ -13,7 +13,7 @@ pipeline{
                 git url: 'https://github.com/diegoantoni/WebGoat'
                 script {
                     sh '''
-                    cd $DIR_DCOCKER
+                    cd $DIR_DOCKER
                     '''
                 }
                 script{
