@@ -12,7 +12,7 @@ pipeline{
             steps {
                 git url: 'https://github.com/diegoantoni/WebGoat'
                 script {
-                    docker.build "$DIR_DOCKER" "$NAME_APP:latest"
+                    docker.build "$NAME_APP:latest" "$DIR_DOCKER"
                 }
             }
         }
