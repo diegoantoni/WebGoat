@@ -12,14 +12,10 @@ pipeline{
             steps {
                 git url: 'https://github.com/diegoantoni/WebGoat'
                 script {
-                   sh '''
-                   cd $DIR_DOCKER
-                   '''
+                   dir("$DIR_DOCKER"){
+                       docker.build "$NAME_APP:latest"
+                   }
                 }
-            }
-
-            steps{
-                docker.build "$NAME_APP:latest"
             }
         }
         
