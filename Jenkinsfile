@@ -14,8 +14,8 @@ pipeline{
                 script {
                     sh '''
                     cd $DIR_DOCKER
+                    docker build -t $NAME_APP:latest
                     '''
-                    docker.build "$NAME_APP:latest"
                 }
             }
         }
