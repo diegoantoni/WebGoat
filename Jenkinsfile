@@ -9,7 +9,7 @@ pipeline{
         stage('Build da imagem'){
             agent { node 'teste' }
             steps {
-                git url: 'https://github.com/diegoantoni/WebGoat'
+                git url: 'https://github.com/diegoantoni/WebGoat/tree/develop/docker'
                 script {
                     docker.build "$NAME_APP:latest"
                 }
@@ -31,5 +31,6 @@ pipeline{
 
 
 }
+
 
 
