@@ -7,6 +7,7 @@ pipeline{
     
     stages {
         stage('Build da imagem'){
+            agent { node 'teste' }
             steps {
                 git url: 'https://github.com/diegoantoni/WebGoat'
                 script {
@@ -16,6 +17,7 @@ pipeline{
         }
         
         stage('Executando Container'){
+            agent { node 'teste' }
             steps {
                 sh '''
                     if [ ! "$(curl -s localhost:$PORT_APP &> /dev/null)" ]; then
@@ -26,6 +28,7 @@ pipeline{
         }
 
     }
+
 
 }
 
