@@ -16,10 +16,13 @@ pipeline{
                     cd $DIR_DOCKER
                     '''
                 }
-                script{
-                docker.build $NAME_APP:latest
+            }
+            steps {
+                script {
+                    docker.build "$NAME_APP:latest"
                 }
             }
+            
         }
         
         stage('Executando Container'){
