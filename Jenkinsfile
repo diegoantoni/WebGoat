@@ -13,9 +13,8 @@ pipeline{
                 git url: 'https://github.com/diegoantoni/WebGoat'
                 script {
                     sh '''
-                    sudo -s
-                    cd $DIR_DOCKER
-                    docker build -t $NAME_APP:latest .
+                    cd $DIR_DCOCKER
+                    docker.build $NAME_APP:latest
                     '''
                 }
             }
