@@ -15,7 +15,7 @@ COPY --chown=webgoat index.html /usr/share/nginx/html/
 #COPY --chown=webgoat target/webwolf-${webgoat_version}.jar /home/webgoat/webwolf.jar
 COPY --chown=webgoat start.sh /home/webgoat
 
-EXPOSE 8080
+EXPOSE 8181
 EXPOSE 9090
 
 WORKDIR /home/webgoat
