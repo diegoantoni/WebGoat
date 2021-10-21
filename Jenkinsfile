@@ -3,15 +3,16 @@ pipeline{
     environment {
         NAME_APP = "webgoat"
         PORT_APP = "3333"
+        DIR_DOCKER = "tree/develop/docker"
     }
     
     stages {
         stage('Build da imagem'){
             agent { node 'teste' }
             steps {
-                git url: 'https://github.com/diegoantoni/WebGoat/tree/develop/docker'
+                git url: 'https://github.com/diegoantoni/WebGoat'
                 script {
-                    docker.build "$NAME_APP:latest"
+                    docker.build "$DIR_DOCKER" "$NAME_APP:latest"
                 }
             }
         }
