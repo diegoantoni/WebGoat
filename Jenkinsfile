@@ -3,7 +3,7 @@ pipeline{
     environment {
         NAME_APP = "webgoat"
         PORT_APP = "3333"
-        DIR_DOCKER = "/home/jenkins/workspace/pipeline-webgoat/docker/"
+        DIR_DOCKER = "tree/develop/docker"
     }
     
     stages {
@@ -12,17 +12,15 @@ pipeline{
             steps {
                 git url: 'https://github.com/diegoantoni/WebGoat'
                 script {
-                    sh '''
-                    cd $DIR_DOCKER
-                    '''
+                   sh '''
+                   cd $DIR_DOCKER
+                   '''
                 }
             }
-            steps {
-                script {
-                    docker.build "$NAME_APP:latest"
-                }
+
+            steps{
+                docker.build "$NAME_APP:latest"
             }
-            
         }
         
         stage('Executando Container'){
@@ -40,6 +38,3 @@ pipeline{
 
 
 }
-
-
-
