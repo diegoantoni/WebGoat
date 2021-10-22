@@ -24,7 +24,7 @@ pipeline{
             steps {
                 sh '''
                     if [ ! "$(curl -s localhost:$PORT_APP &> /dev/null)" ]; then
-                    docker run -d --name $NAME_APP -p $PORT_APP:3333 $NAME_APP:latest
+                    docker run -d --name $NAME_APP -p $PORT_APP:8181 $NAME_APP:latest
                     fi
                 '''
             } 
