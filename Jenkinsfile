@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment {
         NAME_APP = "webgoat"
-        PORT_APP = "3333"
+        PORT_APP = "8181"
         DIR_DOCKER = "/home/jenkins/workspace/pipeline-webgoat/docker"
     }
     
